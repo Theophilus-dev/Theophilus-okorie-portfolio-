@@ -1,0 +1,752 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  background-color: #222830;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  font-size: 16px;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navbar */
+nav {
+  background-color: #222830;
+  padding: 10px 0 20px;
+  position: sticky;
+  top: 0;              /* sticky needs this */
+  z-index: 1000;       /* keep nav above other sections */
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  margin: auto;
+  width: 70%;
+}
+
+/* Logo */
+.logo-name {
+  text-decoration: none;
+  font-weight: 500;
+  color: #00ADB5;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+}
+.logo-name:hover {
+  color: white;
+}
+
+/* Desktop Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding-right: 50px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  color: #00ADB5;
+}
+
+/* Hamburger Button */
+.navbar-menu {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px auto;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Responsive Styles TABLET */
+@media (max-width: 1180px) {
+  .logo-name {
+    padding-left:0px; /* prevent pushing logo too far */
+    width: 90%;
+    margin: auto;
+  }
+  .navbar-container{
+    margin: 0 auto;
+    width: 90%;
+  }
+  .navbar-menu {
+    display: flex; /* show hamburger */
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #222830;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    gap: 20px;
+    padding: 0;
+  }
+
+  /* When active (menu opened) */
+  .nav-links.active {
+    height: 250px; /* enough space for links */
+    padding: 20px 0;
+  }
+  /* Hamburger to X transition */
+.navbar-menu.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.navbar-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.navbar-menu.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 3px auto;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+}
+
+
+
+/*Hereo Section*/
+.hereo-section{
+  display: flex;
+  justify-content: left;
+  gap: 70px;
+  padding-top: 70px;
+  margin: auto;
+  width: 70%;
+}
+.Theo-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #00ADB5;
+    padding: 4px;
+    
+}
+.about h1{
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -2px;
+}
+.about h2{
+  font-size: 25px;
+  color: #00ADB5;
+  line-gap-override: 1000px;
+  
+}
+.about p{
+  line-height: 25px;
+  padding-top: 25px;
+  color: white;
+}
+.heoro-button a{
+  text-decoration: none;
+  
+}
+.heoro-button{
+  display: flex;
+  gap: 15px;
+}
+.Email-button{
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #00ADB5;
+    border: 1px solid #00ADB5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+.Email-button:hover{
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+.linkedln-button{
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00ADB5;
+    background: transparent;
+    border: 1px solid #00ADB5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+.linkedln-button:hover{
+  background-color: #00ADB5;
+  color: white;
+}
+.Github-button{
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+.Github-button:hover{
+   padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00ADB5;
+    background: transparent;
+    border: 1px solid #00ADB5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+/* media query for hereo section tablet and phone*/
+
+
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .hereo-section {
+    flex-direction: column;   /* stack image above text */
+    align-items: center;      /* center only the image */
+    gap: 40px;
+    margin: auto;
+    width: 90%;
+    padding-top: 50px;
+  }
+
+  .image1 {
+    display: flex;
+    justify-content: center; /* centers the picture */
+    width: 100%;
+  }
+
+  .about {
+    text-align: left; /* keep text left-aligned */
+    width: 90%;
+    max-width: 600px; /* keeps it neat */
+  }
+
+  .about h1 {
+    font-size: 32px;
+  }
+
+  .about h2 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .about p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 15px;
+  }
+
+  .heoro-button {
+    display: flex;
+    flex-direction: row; /* buttons in one line */
+    justify-content: flex-start; 
+    gap: 12px;
+    margin-top: 20px;
+  }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 687px) {
+  .Theo-image {
+    width: 170px;
+    height: 170px;
+  }
+
+  .about {
+    width: 90%;
+    max-width: 450px;
+    padding-left: 0px;
+  }
+
+  .about h1 {
+    font-size: 28px;
+  }
+
+  .about h2 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .about p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 10px;
+  }
+
+  .heoro-button {
+    flex-direction: row; /* keep buttons on same line */
+    justify-content: flex-start;
+    flex-wrap: wrap;     /* allow wrapping if screen is too small */
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .heoro-button a {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    width: auto;       /* no forced full width */
+    max-width: none;
+  }
+}
+
+
+/*skiills sections*/
+
+.skills-container{
+  margin: auto;
+}
+.skills {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  
+}
+
+.skills h2 {
+  padding: 12px 3px;
+  font-weight: 100;
+  color: white;
+  border-bottom: 1px solid white;
+  width: 70%;          /* keeps it wide like your version */
+}
+
+/* Skills row */
+.skills-js {
+  display: flex;
+  flex-wrap: wrap;     /* allows wrapping when screen is smaller */
+  gap: 20px;
+  padding-top: 20px;
+  color: white;
+  margin: auto;
+  width: 70%;
+}
+
+/* Skill pill style */
+.skills-js p {
+  border-radius: 50px;
+  border: 1px solid #00ADB5;
+  padding: 10px 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #00ADB5;
+}
+
+.skills-js p:hover {
+  background-color: #00ADB5;
+  color: white;
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {   /* tablets & phones */
+  .skills-js{
+    margin: auto;
+    width: 90%;
+  }
+  .skills h2 {
+    width: 90%;
+    font-size: 22px;
+  }
+
+  .skills-js {
+    gap: 12px;
+    padding-top: 15px;
+  }
+
+  .skills-js p {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 300px) {   /* small phones */
+  .skills{
+    
+  }
+  .skills h2 {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .skills-js {
+    gap: 10px;
+  }
+
+  .skills-js p {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+
+/*Experience Section*/
+
+.Experience {
+  color: white;
+  padding: 15px;
+  border: 1px solid white;
+  margin-top: 30px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+
+.skill-frontend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.skill-frontend h3,
+.skill-frontend p {
+  margin: 0;
+}
+
+.Experience ul {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+.Experience li {
+  margin-bottom: 6px;
+}
+
+/* ✅ Tablet & Mobile Responsiveness */
+@media (max-width: 768px) {
+  .Experience {
+    width: 90%; /* narrower screen = wider box */
+  }
+
+  .skill-frontend {
+    flex-direction: column;   /* stack items */
+    align-items: flex-start;  /* align to left */
+    gap: 8px;                 /* spacing between title & date */
+  }
+
+  .skill-frontend h3 {
+    font-size: 18px;
+  }
+
+  .skill-frontend p {
+    font-size: 14px;
+    color: #ccc; /* lighter shade for date */
+  }
+}
+
+
+/* project list*/
+/* Card Container */
+
+.project-container{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.card-container{
+  margin: auto;
+  max-width: 70%;
+  display: flex;
+  flex-wrap: nowrap;
+  
+}
+.card {
+  background:#222830;              /* dark background */
+  color: white;
+  border: 1px solid white;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 350px;              /* card width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-top: 20px;
+}
+
+/* Card Hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Image at top */
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Card Text */
+.card-text {
+  padding: 15px;
+}
+
+.card-text h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #00ADB5;
+  border: 2px sol;
+}
+
+.card-text p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+
+
+/* Tablet (2 cards per row) */
+@media (max-width: 768px) {
+  .card-container{
+    flex-wrap: wrap;
+    margin: 0;
+    width: 90%;
+  }
+ 
+ 
+  .card {
+    flex: 1 1 calc(50% - 20px);
+    width: 90%;
+    gap: 20px;
+
+  }
+  .project-container{
+    margin: auto;
+    width: 90%;
+  }
+}
+
+/* Mobile (1 card per row) */
+@media (max-width: 600px) {
+  .project-container {
+    width: 90%;
+    margin: auto;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    width: 90%;
+  }
+}
+
+
+/*Education*/
+.education-section {
+  margin: 40px auto;
+  
+}
+
+.edu-card {
+  background:#222830;
+  color: white;
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.edu-icon {
+  flex-shrink: 0;
+  color: #00ADB5;
+}
+
+.edu-details h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.edu-details p {
+  margin: 0;
+  color: #ccc;
+}
+
+.edu-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .edu-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .edu-card{
+    width: 90%;
+  }
+}
+
+
+
+/*contact*/
+
+
+.contact-container {
+  text-align: center;   
+  color: white;
+}
+
+.contact-container h2 {
+  margin-bottom: 20px; 
+}
+
+.contact-container p {
+  margin: 0 auto;       /* remove default spacing */
+  line-height: 1.6;     /* improve readability */
+  max-width: 600px;     /* keep text nicely contained */
+  margin-bottom: 20px;
+}
+
+
+/* Box for "Let's build something great" and buttons */
+.contact-box {
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers all children */
+  gap: 10px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 70px;
+}
+.contact-box h2 {
+ margin-bottom: 10px;
+}
+
+/* Buttons container */
+.contact-box div {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* makes buttons wrap on small screens */
+  justify-content: center;
+}
+
+
+/* media query contact TABLET */
+@media(max-width: 678px){
+  .contact-container{
+    width: 100%;
+    margin: auto;
+  }
+  .contact-box{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 70px;
+  }
+}
+
+/* Footer */
+.footer{
+  color:white ;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  padding: 30px;
+  background-color: #2b2929;
+}
+
+
+
+
+
+
+
+
