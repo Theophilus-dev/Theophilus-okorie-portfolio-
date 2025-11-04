@@ -53,7 +53,7 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 26px;
   padding-right: 50px;
 }
 
